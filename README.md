@@ -32,6 +32,7 @@ A comprehensive, end‑to‑end benchmark suite for evaluating 3D Geometric Foun
 ## 📦 Installation
 
 1. **Clone this repository**  
-   ```bash
-   git clone https://github.com/your-org/3d-gfm-benchmark.git
-   cd 3d-gfm-benchmark
+   
+2. **Follow the readme.md under each folder to install their environment**  
+
+3. **Use provided scripts for multi-task evaluation**
