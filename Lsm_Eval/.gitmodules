@@ -1,0 +1,12 @@
+[submodule "submodules/dust3r"]
+	path = submodules/dust3r
+	url = https://github.com/naver/dust3r.git
+[submodule "submodules/PointTransformerV3"]
+	path = submodules/PointTransformerV3
+	url = https://github.com/Pointcept/PointTransformerV3.git
+[submodule "submodules/lang_seg"]
+	path = submodules/lang_seg
+	url = https://github.com/isl-org/lang-seg.git
+[submodule "data_process/scannetpp"]
+	path = data_process/scannetpp
+	url = https://github.com/zjrandom951/scannetpp_lsm.git

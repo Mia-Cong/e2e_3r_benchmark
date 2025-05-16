@@ -1,0 +1,6 @@
+{
+    "python.analysis.extraPaths": [
+        "./submodules",
+        "./submodules/dust3r"
+    ]
+}

@@ -1,0 +1,27 @@
+# VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json 
+
+# Checkpoints
+checkpoints/*
+
+# Datasets
+/data
+
+# Python bytecode
+*.pyc
+__pycache__/
+
+# Build files
+build/
+
+# Python egg metadata
+*.egg-info/
+*.egg
+
+# Outputs
+outputs/
+

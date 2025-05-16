@@ -1,0 +1,96 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "scannet_processor.py",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "data_process.scannet.scannet_processor",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "demo.py",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/demo.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--file_list", "demo_images/indoor/scene2/processed_000.png", "demo_images/indoor/scene2/processed_001.png",
+                "--model_path", "checkpoints/checkpoint-40.pth",
+                "--output_path", "outputs/indoor/scene2",
+                "--resolution", "256"
+            ]
+        },
+        {
+            "name": "model.py",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/large_spatial_model/model.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--config",
+                "configs/default.yaml"
+            ]
+        },
+        {
+            "name": "train.py",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/train.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--train_dataset",
+                "100 @ Scannet(split='train', ROOT='data/scannet_processed', resolution=(256, 256), aug_crop=16)",
+                "--test_dataset",
+                "100 @ Scannet(split='val', ROOT='data/scannet_processed', resolution=(256, 256))",
+                "--train_criterion",
+                "ConfLoss(Regr3D(L21, norm_mode='avg_dis'), alpha=0.2) + GaussianLoss()",
+                "--test_criterion",
+                "ConfLoss(Regr3D(L21, norm_mode='avg_dis'), alpha=0.2) + GaussianLoss()",
+                "--lr",
+                "0.0001",
+                "--min_lr",
+                "1e-06",
+                "--warmup_epochs",
+                "8",
+                "--epochs",
+                "50",
+                "--batch_size",
+                "3",
+                "--accum_iter",
+                "2",
+                "--save_freq",
+                "1",
+                "--keep_freq",
+                "5",
+                "--eval_freq",
+                "1",
+                "--print_freq",
+                "10",
+                "--disable_cudnn_benchmark",
+                "--output_dir",
+                "checkpoints/Debug"
+            ]
+        },
+        {
+            "name": "test.py",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/test.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--pretrained",
+                "checkpoints/pretrained_models/checkpoint-final.pth",
+                "--test_dataset",
+                "TestDataset(split='test', is_training=False, ROOT='data/scannet_test', resolution=256, seed=777)",
+                "--test_criterion",
+                "TestLoss()",
+                "--test_results_dir",
+                "outputs/test"
+            ]
+        }
+    ]
+}
