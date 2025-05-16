@@ -1,0 +1,28 @@
+[eth3d]
+    root = '/users/yliang51/data/yliang51/CUT3R/data/sparse_depth/eth3d/'
+
+[kitti]
+    root = '/users/yliang51/data/yliang51/CUT3R/data/sparse_depth/kitti/'
+
+[dtu]
+    root = '/users/yliang51/data/yliang51/CUT3R/data/sparse_depth/dtu/'
+
+[scannet]
+    root = '/users/yliang51/data/yliang51/CUT3R/data/sparse_depth/scannet/'
+
+[tanks_and_temples]
+    root = '/users/yliang51/data/yliang51/CUT3R/data/sparse_depth/tanks_and_temples/'
+
+[blendedmvs]
+    root = '/tmp/blendedmvs/'
+
+[flyingthings3d]
+    [flyingthings3d.train]
+        root = '/tmp/flyingthings3d_converted/TRAIN/'
+    [flyingthings3d.test]
+        root = '/tmp/flyingthings3d_converted/TEST/'
+
+[staticthings3d]
+    [staticthings3d.train]
+        root = '/tmp/staticthings3d_converted/TRAIN/'
+
